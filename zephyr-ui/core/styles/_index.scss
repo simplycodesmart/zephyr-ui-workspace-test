@@ -8,4 +8,4 @@
 
 @mixin core() {
     @include variables.apply-theme(light-theme.$light-theme);
-}
+} 
