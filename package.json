@@ -94,7 +94,7 @@
   "packageManager": "yarn@1.22.22",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simplycodesmart/zephyr-ui-workspace.git"
+    "url": "https://github.com/simplycodesmart/zephyr-ui-workspace-test.git" 
   },
   "config": {
     "commitizen": {
