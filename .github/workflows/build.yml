@@ -1,0 +1,78 @@
+# Workflow name
+name: Build, Test, SonarCloud Analysis, and Deploy
+
+# Event triggers
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+    types: [opened, synchronize, reopened]
+
+# Permissions required
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+    if: ${{ github.ref == 'refs/heads/master' }}
+
+    strategy:
+      matrix:
+        node-version: ["20.13.1"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Yarn
+        run: corepack enable && corepack prepare yarn@stable --activate
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Angular project
+        run: yarn build # Ensure this runs the Angular build script that generates the dist folder
+
+      - name: Configure npm authentication
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Semantic release
+        id: semantic-release
+        run: yarn semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish package to npm
+        run: |
+          cd dist
+          yarn publish --access public --non-interactive
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ steps.semantic-release.outputs.nextRelease.version }}
+          release_name: Release ${{ steps.semantic-release.outputs.nextRelease.version }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
