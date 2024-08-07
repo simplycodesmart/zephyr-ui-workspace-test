@@ -62,7 +62,7 @@ jobs:
       - name: Publish package to npm
         run: |
           cd dist
-          yarn publish --access public --non-interactive
+          yarn publish --access public
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
