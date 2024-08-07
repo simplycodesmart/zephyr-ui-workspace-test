@@ -22,6 +22,7 @@
     "semantic-release": "semantic-release --branches master",
     "commit": "git-cz"
   },
+  "private":false,
   "dependencies": {
     "@angular-eslint/eslint-plugin": "18.1.0",
     "@angular-eslint/eslint-plugin-template": "18.1.0",

@@ -46,7 +46,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build Angular project
-        run: yarn build # Ensure this runs the Angular build script that generates the dist folder
+        run: yarn build:zephyr-ui:prod # Ensure this runs the Angular build script that generates the dist folder
 
       - name: Configure npm authentication
         run: |
