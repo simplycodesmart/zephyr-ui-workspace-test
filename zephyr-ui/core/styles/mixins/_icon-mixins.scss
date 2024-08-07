@@ -1,0 +1,9 @@
+@mixin icon-styles {
+    display: inline-block;
+    fill: currentColor;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+$prefix: zep;

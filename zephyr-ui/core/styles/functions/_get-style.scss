@@ -1,0 +1,5 @@
+@use "sass:map";
+
+@function get-style($theme, $key) {
+    @return map.get($theme, $key);
+}

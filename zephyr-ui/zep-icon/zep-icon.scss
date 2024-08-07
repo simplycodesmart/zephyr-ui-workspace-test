@@ -1,0 +1,18 @@
+@use "./../core/styles/mixins/icon-mixins";
+@use "./../core/styles/mixins/create-style-slot" as *;
+@use "./../core/styles/variables/theme-list" as t;
+
+.zep-icon {
+    @include icon-mixins.icon-styles;
+    display: inline-block;
+    fill: currentColor;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+@each $theme in t.$themes {
+    .#{icon-mixins.$prefix}-#{$theme} {
+        @include create-style-slot(color, $theme, icon-mixins.$prefix);
+    }
+}

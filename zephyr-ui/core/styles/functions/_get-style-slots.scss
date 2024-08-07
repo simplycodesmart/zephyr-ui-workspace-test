@@ -1,0 +1,5 @@
+@use "sass:map";
+
+@function get-style-slots($theme) {
+    @return map.keys($theme);
+}

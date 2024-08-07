@@ -1,0 +1,9 @@
+@use "sass:map";
+
+@mixin apply-theme($theme, $prefix: zep) {
+    :root {
+        @each $key, $value in $theme {
+            --#{$prefix}-#{$key}: #{$value};
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "./../zephyr-ui/tsconfig.lib.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  },
+  "exclude": [],
+  "include": ["../zephyr-ui-stories/**/*.stories.*", "./preview.ts"],
+  "files": ["./typings.d.ts"]
+}

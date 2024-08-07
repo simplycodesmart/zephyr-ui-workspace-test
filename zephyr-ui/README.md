@@ -24,7 +24,7 @@ We welcome contributions to improve Zephyr UI Components! To contribute:
 
 - Fork the repository.
 - Create your feature branch: git checkout -b feature/my-feature.
-- Commit your changes: yarn commit 
+- Commit your changes: git commit -am 'Add some feature'.
 - Push to the branch: git push origin feature/my-feature.
 - Submit a pull request.
 

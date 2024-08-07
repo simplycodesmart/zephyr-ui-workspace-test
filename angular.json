@@ -3,5 +3,72 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "@zephyr-ui/essentials": {
+      "projectType": "library",
+      "root": "zephyr-ui",
+      "sourceRoot": "zephyr-ui",
+      "prefix": "zep",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "zephyr-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "zephyr-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "zephyr-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "zephyr-ui/tsconfig.spec.json",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "@zephyr-ui/essentials:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "documents"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "@zephyr-ui/essentials:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "documents"
+            ],
+            "outputDir": "storybook-static"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,0 +1,360 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "EmptyIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: '',\r\n    size: 24,\r\n    color: '#e61952',\r\n    className: 'material-icons',\r\n  },\r\n}"
+            },
+            {
+                "name": "ErrorLoadingSvg",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: 'accessibility1.svg',\r\n  },\r\n}"
+            },
+            {
+                "name": "FontClassCustom",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 48,\r\n    color: '#e61952',\r\n    icon: 'menu',\r\n    className: 'material-icons',\r\n  },\r\n}"
+            },
+            {
+                "name": "FontIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 32,\r\n    color: 'accent',\r\n    icon: 'home',\r\n  },\r\n}"
+            },
+            {
+                "name": "FontIconPrimary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 48,\r\n    color: 'primary',\r\n    icon: 'favorite',\r\n  },\r\n}"
+            },
+            {
+                "name": "InvalidSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: -1,\r\n    color: '#e61952',\r\n    icon: 'menu',\r\n    className: 'material-icons',\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ZepIcon>",
+                "defaultValue": "{\r\n  title: 'Zephyr-UI/zep-icon',\r\n  component: ZepIcon,\r\n  decorators: [\r\n    applicationConfig({\r\n      providers: [provideHttpClient()],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": ".storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "SvgIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: 'accessibility.svg',\r\n  },\r\n}"
+            },
+            {
+                "name": "SvgIconInline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: '<svg><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"blue\" /></svg>',\r\n  },\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ZepIcon>",
+                "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts": [
+                {
+                    "name": "EmptyIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: '',\r\n    size: 24,\r\n    color: '#e61952',\r\n    className: 'material-icons',\r\n  },\r\n}"
+                },
+                {
+                    "name": "ErrorLoadingSvg",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: 'accessibility1.svg',\r\n  },\r\n}"
+                },
+                {
+                    "name": "FontClassCustom",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 48,\r\n    color: '#e61952',\r\n    icon: 'menu',\r\n    className: 'material-icons',\r\n  },\r\n}"
+                },
+                {
+                    "name": "FontIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 32,\r\n    color: 'accent',\r\n    icon: 'home',\r\n  },\r\n}"
+                },
+                {
+                    "name": "FontIconPrimary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 48,\r\n    color: 'primary',\r\n    icon: 'favorite',\r\n  },\r\n}"
+                },
+                {
+                    "name": "InvalidSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: -1,\r\n    color: '#e61952',\r\n    icon: 'menu',\r\n    className: 'material-icons',\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ZepIcon>",
+                    "defaultValue": "{\r\n  title: 'Zephyr-UI/zep-icon',\r\n  component: ZepIcon,\r\n  decorators: [\r\n    applicationConfig({\r\n      providers: [provideHttpClient()],\r\n    }),\r\n  ],\r\n}"
+                },
+                {
+                    "name": "SvgIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: 'accessibility.svg',\r\n  },\r\n}"
+                },
+                {
+                    "name": "SvgIconInline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: '<svg><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"blue\" /></svg>',\r\n  },\r\n}"
+                }
+            ],
+            ".storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": ".storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ZepIcon>",
+                    "file": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": ".storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "EmptyIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ErrorLoadingSvg",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FontClassCustom",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FontIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FontIconPrimary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "InvalidSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SvgIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "zephyr-ui-stories/components/zep-icon/zep-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SvgIconInline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

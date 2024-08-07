@@ -1,0 +1,7 @@
+@mixin create-style-slot($property, $value, $prefix: null) {
+    @if $prefix {
+        #{$property}: var(--#{$prefix}-#{$value});
+    } @else {
+        #{$property}: var(--#{$value});
+    }
+}

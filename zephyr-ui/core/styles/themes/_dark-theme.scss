@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "../variables/colors" as colors;
+
+$dark-theme: (
+    primary: map.get(colors.$primary-teal, 200),
+    accent: map.get(colors.$secondary-orange, 200),
+    warn: map.get(colors.$warn-yellow, 200),
+    error: map.get(colors.$error-red, 200),
+    success: map.get(colors.$success-green, 200),
+    neutral: map.get(colors.$neutral-black, 200),
+    background: #121212,
+    surface: #1e1e1e,
+    on-primary: #000000,
+    on-accent: #000000,
+    on-warn: #000000,
+    on-error: #000000,
+    on-success: #000000,
+    on-neutral: #000000,
+    on-background: #ffffff,
+    on-surface: #ffffff
+);

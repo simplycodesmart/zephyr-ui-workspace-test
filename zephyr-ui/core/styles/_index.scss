@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "./functions/get-style-slots";
+@use "./mixins/create-style-slot";
+@use "./variables/theme-list";
+@use "./variables/variables";
+@use "./themes/light-theme" as light-theme;
+@use "./themes/dark-theme" as dark-theme;
+
+@mixin core() {
+    @include variables.apply-theme(light-theme.$light-theme);
+}

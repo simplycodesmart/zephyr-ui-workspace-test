@@ -1,0 +1,11 @@
+@use "../../styles/variables/colors" as *;
+
+@mixin generate-shade-classes($shades) {
+    @each $shade, $color in $shades {
+        .zep-shade-#{$shade} {
+            color: $color;
+        }
+    }
+}
+
+@include generate-shade-classes($primary-shades);
