@@ -17,14 +17,26 @@ module.exports = function (config) {
       suppressAll: true
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/test/zephyr-ui/'),
+      dir: require('path').join(__dirname, 'coverage/unit-test'), // Updated path
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
+    },
+    coverageReporter: {
+      dir: require('path').join(__dirname, 'coverage/unit-test'), // Updated path
+      reporters: [
+        { type: 'html', subdir: 'report-html' },
+        { type: 'lcov', subdir: 'report-lcov' },
+        { type: 'cobertura', subdir: '.', file: 'cobertura.txt' },
+        { type: 'lcovonly', subdir: '.', file: 'report-lcovonly.txt' },
+        { type: 'teamcity', subdir: '.', file: 'teamcity.txt' },
+        { type: 'text', subdir: '.', file: 'coverage.txt' },
+        { type: 'text-summary', subdir: '.', file: 'coverage-summary.txt' },
+      ]
     },
     reporters: ['progress', 'coverage', 'kjhtml'],
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_INFO, // Set to DEBUG for more verbose logging
     autoWatch: true,
     browsers: ['ChromeHeadless'],
     singleRun: true,

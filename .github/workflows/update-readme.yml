@@ -31,7 +31,7 @@ jobs:
         id: update-readme
         run: |
           # Extract coverage percentage from coverage report
-          COVERAGE_PERCENTAGE=$(awk '/statement/ {print $2}' coverage/coverage-summary.txt | sed 's/%//')
+          COVERAGE_PERCENTAGE=$(awk '/statement/ {print $2}' coverage/unit-test/coverage-summary.txt | sed 's/%//')
           BADGE_URL="https://img.shields.io/badge/Coverage-${COVERAGE_PERCENTAGE}%25-brightgreen"
           
           # Update README.md with the new badge URL
