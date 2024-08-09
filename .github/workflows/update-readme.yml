@@ -30,20 +30,53 @@ jobs:
       - name: Generate Coverage Badge
         id: update-readme
         run: |
-          # Extract coverage percentage from coverage report
-          COVERAGE_PERCENTAGE=$(awk '/statement/ {print $2}' coverage/unit-test/coverage-summary.txt | sed 's/%//')
-          BADGE_URL="https://img.shields.io/badge/Coverage-${COVERAGE_PERCENTAGE}%25-brightgreen"
-          
-          # Update README.md with the new badge URL
-          sed -i "s|https://img.shields.io/badge/Coverage-.*%25-.*|$BADGE_URL|g" README.md
-          
+          # Extract coverage percentages from coverage report
+          COVERAGE_STATEMENTS=$(awk '/statement/ {print $2}' coverage/unit-test/coverage-summary.txt | sed 's/%//')
+          COVERAGE_LINES=$(awk '/line/ {print $2}' coverage/unit-test/coverage-summary.txt | sed 's/%//')
+
+          # Determine badge colors based on coverage percentages
+          if [ "$COVERAGE_STATEMENTS" -lt 50 ]; then
+            STATEMENTS_COLOR="red"
+          elif [ "$COVERAGE_STATEMENTS" -lt 75 ]; then
+            STATEMENTS_COLOR="orange"
+          elif [ "$COVERAGE_STATEMENTS" -lt 90 ]; then
+            STATEMENTS_COLOR="yellow"
+          else
+            STATEMENTS_COLOR="brightgreen"
+          fi
+
+          if [ "$COVERAGE_LINES" -lt 50 ]; then
+            LINES_COLOR="red"
+          elif [ "$COVERAGE_LINES" -lt 75 ]; then
+            LINES_COLOR="orange"
+          elif [ "$COVERAGE_LINES" -lt 90 ]; then
+            LINES_COLOR="yellow"
+          else
+            LINES_COLOR="brightgreen"
+          fi
+
+          # Create badge URLs
+          STATEMENTS_BADGE_URL="https://img.shields.io/badge/Statement_Coverage-${COVERAGE_STATEMENTS}%25-${STATEMENTS_COLOR}"
+          LINES_BADGE_URL="https://img.shields.io/badge/Line_Coverage-${COVERAGE_LINES}%25-${LINES_COLOR}"
+
+          # Update README.md with the new badge URLs
+          sed -i "s|https://img.shields.io/badge/Statement_Coverage-.*%25-.*|$STATEMENTS_BADGE_URL|g" README.md
+          sed -i "s|https://img.shields.io/badge/Line_Coverage-.*%25-.*|$LINES_BADGE_URL|g" README.md
+
+          # Check if README.md was modified
+          git diff --exit-code README.md || echo "README.md modified"
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and Push Changes
+        if: steps.update-readme.outputs.modified == 'true'
+        run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
           git add README.md
-          git commit -m "Update coverage badge"
+          git commit -m "Update coverage badges"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Trigger npm publish workflow
         run: |
