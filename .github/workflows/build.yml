@@ -58,24 +58,13 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate release notes
-        if: steps.semantic-release.outputs.nextRelease != ''
-        uses: actions/release-notes@v1
-        id: release_notes
-        with:
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
-          tag: ${{ steps.semantic-release.outputs.nextRelease.version }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Create GitHub release
         if: steps.semantic-release.outputs.nextRelease != ''
         uses: actions/create-release@v1
         with:
           tag_name: ${{ steps.semantic-release.outputs.nextRelease.version }}
           release_name: Release ${{ steps.semantic-release.outputs.nextRelease.version }}
-          body: ${{ steps.release_notes.outputs.notes }}
+          body: ${{ steps.semantic-release.outputs.notes }}
           draft: false
           prerelease: false
         env:
