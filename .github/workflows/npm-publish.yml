@@ -1,15 +1,10 @@
 # Workflow name
-name: Build, Test, SonarCloud Analysis, and Deploy
+name: Publish Package to npm
 
 # Event triggers
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-    types: [opened, synchronize, reopened]
+  repository_dispatch:
+    types: [publish_package]
 
 # Permissions required
 permissions:
