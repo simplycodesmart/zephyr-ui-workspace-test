@@ -83,5 +83,5 @@ jobs:
           curl -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            -d '{"event_type": "publish_package"}' \
+            -d '{"event_type": "sonar_qube"}' \
             https://api.github.com/repos/${{ github.repository }}/dispatches
