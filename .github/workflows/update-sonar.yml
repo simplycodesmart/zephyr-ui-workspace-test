@@ -10,9 +10,14 @@ jobs:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          node-version: '20.13.1'  # Use a single version string
+          
       - name: Install Yarn
         run: corepack enable && corepack prepare yarn@stable --activate
 
@@ -21,7 +26,7 @@ jobs:
 
       - name: Run Karma tests and generate coverage
         run: yarn test:zephyr-ui:coverage
-        
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
