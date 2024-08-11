@@ -16,7 +16,7 @@ jobs:
       contents: write
       pull-requests: write
       repository-projects: write
-    if: ${{ github.ref == 'refs/heads/master' }} 
+    if: ${{ github.ref == 'refs/heads/master' }}  # Adjust to your main branch
 
     strategy:
       matrix:
@@ -37,11 +37,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build Angular library
-        run: yarn build:zephyr-ui:prod 
-
-      - name: List contents of dist directory
-        run: ls -R dist
+      - name: Build Angular project
+        run: yarn build:zephyr-ui:prod
 
       - name: Configure npm authentication
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
@@ -51,13 +48,6 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish dist folder to npm
-        run: |
-          cd dist
-          npm publish --access public
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create GitHub release
         if: steps.semantic-release.outputs.nextRelease != ''
