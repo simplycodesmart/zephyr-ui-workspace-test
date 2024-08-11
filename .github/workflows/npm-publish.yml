@@ -66,6 +66,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Run Semantic Release
+        run: |
+         cd dist
+         npm publish --access public
+        env:
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
+
       - name: Trigger StoryBook publish workflow
         run: |
           curl -X POST \
