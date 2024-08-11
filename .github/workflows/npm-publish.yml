@@ -1,12 +1,9 @@
-# Workflow name
 name: Publish Package to npm
 
-# Event triggers
 on:
   repository_dispatch:
     types: [publish_package]
 
-# Permissions required
 permissions:
   contents: read
   pages: write
@@ -46,9 +43,16 @@ jobs:
       - name: Configure npm authentication
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
+      - name: Publish dist folder to npm
+        run: |
+          cd dist
+          npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Semantic release
         id: semantic-release
-        run: yarn semantic-release
+        run: npx semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -72,4 +76,3 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             -d '{"event_type": "publish_storybook"}' \
             https://api.github.com/repos/${{ github.repository }}/dispatches
-        
