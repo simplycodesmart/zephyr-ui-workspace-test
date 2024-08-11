@@ -103,8 +103,7 @@
   },
   "release": {
     "branches": [
-      "main",
-      "next"
+      "main"
     ],
     "repositoryUrl": "https://github.com/simplycodesmart/zephyr-ui-workspace-test",
     "plugins": [
