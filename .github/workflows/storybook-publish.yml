@@ -22,7 +22,7 @@ jobs:
       run: corepack enable && corepack prepare yarn@stable --activate
 
     - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile
 
     - name: Build Storybook
       run: npm storybook:build
