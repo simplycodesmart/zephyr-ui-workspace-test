@@ -16,7 +16,7 @@ jobs:
       contents: write
       pull-requests: write
       repository-projects: write
-    if: ${{ github.ref == 'refs/heads/main' }}  # Adjust to your main branch
+    if: ${{ github.ref == 'refs/heads/master' }}  # Adjust to your main branch
 
     strategy:
       matrix:
