@@ -1,6 +1,6 @@
 {
   "name": "@zephyr-ui/essentials",
-  "version": "7.0.0",
+  "version": "1.0.0",
   "author": {
     "name": "@zephyr-ui"
   },
@@ -102,14 +102,32 @@
     }
   },
   "release": {
-    "branches": ["+([0-9])?(.{+([0-9]),x}).x", "master", "main", "next", "next-major", {"name": "beta", "prerelease": true}, {"name": "alpha", "prerelease": true}],
-    "repositoryUrl": "https://github.com/simplycodesmart/zephyr-ui-workspace-test",
-    "tagFormat": "${version}",
+    "branches": [
+      "master",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
       "@semantic-release/npm",
       "@semantic-release/github"
+    ],
+    "verifyConditions": [
+      "condition-circle",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "getLastRelease": "semantic-release-npm",
+    "publish": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
     ]
   }
 }
