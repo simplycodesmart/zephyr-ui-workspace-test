@@ -17,7 +17,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20.13.1'  # Use a single version string
-          
       - name: Install Yarn
         run: corepack enable && corepack prepare yarn@stable --activate
 
@@ -29,6 +28,8 @@ jobs:
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        with:
+         args: -Dsonar.projectBaseDir=./ 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
