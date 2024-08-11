@@ -16,7 +16,7 @@ jobs:
       contents: write
       pull-requests: write
       repository-projects: write
-    if: ${{ github.ref == 'refs/heads/master' }}
+    if: ${{ github.ref == 'refs/heads/main' }}  # Adjust to your main branch
 
     strategy:
       matrix:
@@ -43,19 +43,20 @@ jobs:
       - name: Configure npm authentication
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-      - name: Publish dist folder to npm
-        run: |
-          cd dist
-          npm publish --access public
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Semantic release
+      - name: Run Semantic Release
         id: semantic-release
         run: npx semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish dist folder to npm
+        if: steps.semantic-release.outputs.nextRelease != ''
+        run: |
+          cd dist
+          npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create GitHub release
         if: steps.semantic-release.outputs.nextRelease != ''
