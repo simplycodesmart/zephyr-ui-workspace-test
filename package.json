@@ -45,6 +45,7 @@
     "@chromatic-com/storybook": "1.6.1",
     "@compodoc/compodoc": "1.1.25",
     "@eslint/js": "9.7.0",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "^10.1.4",
     "@semantic-release/npm": "12.0.1",
@@ -118,16 +119,13 @@
       "@semantic-release/github"
     ],
     "verifyConditions": [
-      "condition-circle",
       "@semantic-release/changelog",
       "@semantic-release/npm",
       "@semantic-release/git"
     ],
     "getLastRelease": "semantic-release-npm",
     "publish": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
+      "@semantic-release/npm"
     ]
   }
 }

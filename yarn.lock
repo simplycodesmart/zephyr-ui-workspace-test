@@ -2792,6 +2792,16 @@
   resolved "https://registry.yarnpkg.com/@sec-ant/readable-stream/-/readable-stream-0.4.1.tgz#60de891bb126abfdc5410fdc6166aca065f10a0c"
   integrity sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==
 
+"@semantic-release/changelog@^6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@semantic-release/changelog/-/changelog-6.0.3.tgz#6195630ecbeccad174461de727d5f975abc23eeb"
+  integrity sha512-dZuR5qByyfe3Y03TpmCvAxCyTnp7r5XwtHRf/8vD9EAn4ZWbavUX8adMtXYzE86EVh0gyLA7lm5yW4IV30XUag==
+  dependencies:
+    "@semantic-release/error" "^3.0.0"
+    aggregate-error "^3.0.0"
+    fs-extra "^11.0.0"
+    lodash "^4.17.4"
+
 "@semantic-release/commit-analyzer@^13.0.0-beta.1":
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-13.0.0.tgz#98e28e2b2cb3d8e3a19effb82d5f493a0147e7a2"
@@ -2805,6 +2815,11 @@
     import-from-esm "^1.0.3"
     lodash-es "^4.17.21"
     micromatch "^4.0.2"
+
+"@semantic-release/error@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.1.0.tgz#44771f676f5b148da309111285a97901aa95a6e0"
+  integrity sha512-r3pcw7lhzoSalM55O7L8R3gNq8AnZ7OS7RReHqJDTIuyRaQbtfZ+9S8Krvh/BSnTMYYhs4TgZctb6pOamegUtQ==
 
 "@semantic-release/error@^3.0.0":
   version "3.0.0"
@@ -5349,6 +5364,16 @@ concat-stream@^1.5.0:
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
+condition-circle@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/condition-circle/-/condition-circle-2.0.2.tgz#1eda973569b2de24eff11179f228e7eadde80506"
+  integrity sha512-lX/6YGbAIFrxxI00y4ZfQYoF1dYSLwcu6Lk7lnnfxiIs/yS4/GBkS5rRxktivU444bRXaFBeVt/JM9sL9fX9SA==
+  dependencies:
+    "@semantic-release/error" "2.1.0"
+    cross-spawn "5.1.0"
+    debug "3.1.0"
+    safe-env "1.2.0"
+
 confbox@^0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/confbox/-/confbox-0.1.7.tgz#ccfc0a2bcae36a84838e83a3b7f770fb17d6c579"
@@ -5597,7 +5622,7 @@ critters@0.0.24:
     postcss "^8.4.23"
     postcss-media-query-parser "^0.2.3"
 
-cross-spawn@^5.0.1:
+cross-spawn@5.1.0, cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
   integrity sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==
@@ -12153,6 +12178,11 @@ qw@^1.0.2:
   resolved "https://registry.yarnpkg.com/qw/-/qw-1.0.2.tgz#0c31a6f810320a91c58b05198679427103b03c4a"
   integrity sha512-1PhZ/iLKwlVNq45dnerTMKFjMof49uqli7/0QsvPNbX5OJ3IZ8msa9lUpvPheVdP+IYYPrf6cOaVil7S35joVA==
 
+ramda@0.22.1:
+  version "0.22.1"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.22.1.tgz#031da0c3df417c5b33c96234757eb37033f36a0e"
+  integrity sha512-koAvutfef1Lxo3xAWVrqf5dVcXmg5Hdh00thZUHzMrC+nFDTqcMwKTpus7aYNmKRCjapt0Lh928ynBal95Ap2Q==
+
 randombytes@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -12806,6 +12836,13 @@ safe-buffer@5.2.1, safe-buffer@>=5.1.0, safe-buffer@^5.0.1, safe-buffer@^5.1.0, 
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
+
+safe-env@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/safe-env/-/safe-env-1.2.0.tgz#d5b65e0f147e7b7edd5593b9e1fd4bd710e0254f"
+  integrity sha512-ZXgxTHGRAVh6jYgEzCi2Xl/HoAWvl3wUtquILGqXtb4qdoPjMaPe+Wx8acXlxjzrxt2WzecfxJUk19RUtFhewQ==
+  dependencies:
+    ramda "0.22.1"
 
 safe-regex-test@^1.0.3:
   version "1.0.3"

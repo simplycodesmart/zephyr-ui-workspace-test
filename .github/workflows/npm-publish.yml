@@ -6,7 +6,7 @@ on:
 
 permissions:
   contents: read
-  pages: write
+  packages: write
   id-token: write
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       contents: write
       pull-requests: write
       repository-projects: write
-    if: ${{ github.ref == 'refs/heads/master' }}  # Adjust to your main branch
+    if: ${{ github.ref == 'refs/heads/master' }} 
 
     strategy:
       matrix:
@@ -44,10 +44,7 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Run Semantic Release
-        id: semantic-release
-        run: |
-          cd dist
-          npx semantic-release
+        run: npx semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
