@@ -26,6 +26,12 @@ jobs:
       - name: Run Karma tests and generate coverage
         run: yarn test:zephyr-ui:coverage
 
+       - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage/unit-test/report-lcov/lcov.info
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
@@ -36,8 +42,8 @@ jobs:
       
       - name: Trigger npm publish workflow
         run: |
-          curl -X POST \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github.v3+json" \
-            -d '{"event_type": "publish_package"}' \
+          curl -X POST /
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" /
+            -H "Accept: application/vnd.github.v3+json" /
+            -d '{"event_type": "publish_package"}' /
             https://api.github.com/repos/${{ github.repository }}/dispatches
