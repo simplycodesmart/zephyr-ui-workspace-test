@@ -26,7 +26,7 @@ jobs:
       - name: Run Karma tests and generate coverage
         run: yarn test:zephyr-ui:coverage
 
-      -name: Upload coverage report
+      - name: Upload coverage report
         uses: actions/upload-artifact@v3
         with:
           name: coverage-report
