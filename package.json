@@ -123,15 +123,6 @@
         "pkgRoot": "./dist"
       },
       "@semantic-release/github"
-    ],
-    "verifyConditions": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ],
-    "getLastRelease": "semantic-release-npm",
-    "publish": [
-      "@semantic-release/npm"
     ]
   }
 }
