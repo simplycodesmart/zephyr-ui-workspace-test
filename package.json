@@ -22,7 +22,7 @@
     "semantic-release": "semantic-release --branches master",
     "commit": "git-cz"
   },
-  "private":false,
+  "private": false,
   "dependencies": {
     "@angular-eslint/eslint-plugin": "18.1.0",
     "@angular-eslint/eslint-plugin-template": "18.1.0",
@@ -46,7 +46,7 @@
     "@compodoc/compodoc": "1.1.25",
     "@eslint/js": "9.7.0",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "10.1.1",
+    "@semantic-release/github": "^10.1.4",
     "@semantic-release/npm": "12.0.1",
     "@storybook/addon-docs": "8.2.5",
     "@storybook/addon-essentials": "8.2.5",
@@ -94,7 +94,7 @@
   "packageManager": "yarn@1.22.22",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simplycodesmart/zephyr-ui-workspace-test.git" 
+    "url": "https://github.com/simplycodesmart/zephyr-ui-workspace-test.git"
   },
   "config": {
     "commitizen": {
@@ -102,7 +102,10 @@
     }
   },
   "release": {
-    "branches": ["main", "next"],
+    "branches": [
+      "main",
+      "next"
+    ],
     "repositoryUrl": "https://github.com/simplycodesmart/zephyr-ui-workspace-test",
     "tagFormat": "${version}",
     "plugins": [
