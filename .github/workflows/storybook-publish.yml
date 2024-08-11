@@ -25,7 +25,7 @@ jobs:
       run: yarn install --frozen-lockfile
 
     - name: Build Storybook
-      run: npm storybook:build
+      run: yarn storybook:build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
