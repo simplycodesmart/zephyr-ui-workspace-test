@@ -106,6 +106,7 @@
       "main"
     ],
     "repositoryUrl": "https://github.com/simplycodesmart/zephyr-ui-workspace-test",
+    "tagFormat": "${version}",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
