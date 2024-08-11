@@ -1,5 +1,5 @@
 {
-  "name": "@zephyr-ui/essentials",
+  "name": "@zephyr-ui/essentials-ui",
   "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^18.0.0",
