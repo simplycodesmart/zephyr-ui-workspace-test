@@ -1,4 +1,4 @@
-name: Deploy Storybook to GitHub Pages
+name: Build & Deploy Storybook to GitHub Pages
 
 # Event triggers
 on:
