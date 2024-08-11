@@ -1,8 +1,13 @@
 name: Publish Package to npm
 
+# on:
+#   repository_dispatch:
+#     types: [publish_package]
+
 on:
-  repository_dispatch:
-    types: [publish_package]
+  push:
+    branches:
+      - '**'  # Trigger workflow on pushes to all branches
 
 permissions:
   contents: read

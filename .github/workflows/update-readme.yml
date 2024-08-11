@@ -1,9 +1,9 @@
 name: Update README with Coverage Badge
 
-on:
-  push:
-    branches:
-      - '**'  # Trigger workflow on pushes to all branches
+# on:
+#   push:
+#     branches:
+#       - '**'  # Trigger workflow on pushes to all branches
 
 jobs:
   update-readme:
